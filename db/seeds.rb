@@ -131,6 +131,93 @@ cat3.products.create!({
   quantity: 23,
   price: 2_483.75
 })
+## USERS
+User.destroy_all
+user1 = User.create({
+  name: 'Bradley Cooper',
+  email: 'brad_coop@gmail.com',
+  password_digest: "fdbhfdi[hbshbfdsihbwcdHBIEW"
+})
+user2 = User.create({
+  name: 'Jesus Christ',
+  email: 'theholy1@gmail.com',
+  password_digest: "fdsvodsds;bjdsafljd"
+})
+user3 = User.create({
+  name: 'Bun B',
+  email: 'bunB@gmail.com',
+  password_digest: "fefhgsuigfdipsbapib"
+})
+## REVIEWS 
+Review.destroy_all
+prod1 = Product.find_by name: 'Red Bookshelf' 
+prod2 = Product.find_by name: 'Electric Chair'
+prod3 = Product.find_by name: 'Modern Skateboards'
+prod1.reviews.create! ({
+  user_id: 1,
+  description: "With stunning speed and reliability, 
+  the Samsung 64GB MicroSDXC EVO Select memory card 
+  lets you get the most out of your devices. Ultra-fast 
+  read & write speeds of up to 100MB/s & 60MB/s and backed by 
+  4-proof protection, keep your data safe against water, extreme temperatures, 
+  and other harsh conditions. Feel confident to capture, store and transfer 
+  4K UHD videos, photos, music and other large files effortlessly. 
+  Your memories and adventures are irreplaceable, and now unforgettable.",
+  rating: 5
+})
+prod1.reviews.create! ({
+  user_id: 3,
+  description: "def dont buy",
+  rating: 2
+})
+prod1.reviews.create! ({
+  user_id: 2,
+  description: "u gotta have this thing!!",
+  rating: 4
+})
+prod2.reviews.create! ({
+  user_id: 1,
+  description: "WOW A MUST BUY!!!!",
+  rating: 5
+})
+prod2.reviews.create! ({
+  user_id: 3,
+  description: "totally awesome would def by for one of my dogs",
+  rating: 5
+})
+prod2.reviews.create! ({
+  user_id: 2,
+  description: "are you crazy?? this grabage",
+  rating: 1
+})
+
+prod3.reviews.create! ({
+  user_id: 1,
+  description: "FREAKING AWESOME - I 
+  cut the cord and I was VERY VERY hesitant to 
+  do so. I was worried about not having some of 
+  the channels I watched a lot of - ESPN, HGTV and 
+  some others but I will get to that in a minute. I was 
+  also worried about not being able to PAUSE live TV. Well 
+  the TIVO Roamio = AWESOMENESS. I have an HDTV over the air 
+  antenna I get ABC, CBS, NBC and FOX and PBS KIDS in perfect 
+  clarity and they have plenty of sports and shows. It is so easy 
+  to set up a recording and get the TiVo to keep recording the shows 
+  I like. I can pause the adult shows when my kid walks into the room and 
+  I can pause her shows when I need to get her attention 
+  (TV is crack to a child).",
+  rating: 5
+})
+prod3.reviews.create! ({
+  user_id: 3,
+  description: "def hot",
+  rating: 2
+})
+prod3.reviews.create! ({
+  user_id: 2,
+  description: "not hot",
+  rating: 3
+})
 
 
 puts "DONE!"

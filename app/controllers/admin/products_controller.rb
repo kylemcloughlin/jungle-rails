@@ -1,8 +1,9 @@
 class Admin::ProductsController < Admin::AdminController
   
   def index
+  
     @products = Product.order(id: :desc).all
-  puts " hththththth ehehehedbweo[fbwo[dnfo[fn[sdino[aifns[ofno[ifns #{ENV['ADMIN_NAME']}"
+  
   end
 
   def new
